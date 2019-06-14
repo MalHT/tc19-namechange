@@ -1,0 +1,186 @@
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+
+.main-header {
+  background-color: #ff9944;
+  color: #fefefe;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 10px 30px 10px 80px;
+}
+
+.page-intro {
+  
+}
+
+.page-intro .subheading {
+  color: #6d676e;
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+
+.page-intro .subheading a, .page-intro .subheading a:visited {
+  color: #6d676e;
+  text-decoration: none;
+}
+
+.page-intro h1 {
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.page-field .label, .page-rating .label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.page-rating {
+  
+}
+
+.page-rating .rating {
+  vertical-align: center;
+}
+
+.page-rating .rating:before {
+  content: " ";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-size: 30px;
+  position: relative;
+  top: 10px;
+}
+
+.page-rating .rating.positive:before {
+  background-image: url("https://cdnjs.cloudflare.com/ajax/libs/twemoji/12.0.4/2/72x72/1f642.png");
+}
+.page-rating .rating.mixed:before {
+  background-image: url("https://cdnjs.cloudflare.com/ajax/libs/twemoji/12.0.4/2/72x72/1f610.png");
+}
+.page-rating .rating.negative:before {
+  background-image: url("https://cdnjs.cloudflare.com/ajax/libs/twemoji/12.0.4/2/72x72/1f641.png");
+}
+
+.page-field {
+  
+}
+
+.page-content {
+  margin: 20px;
+}
+
+.main-header .logo {
+  font-size: 1.4em;
+}
+
+.main-nav ul {
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  left: -300px;
+  margin: -25px 0 0 -25px;
+  padding-top: 75px;
+  top: 0;
+  width: 300px;
+/*   z-index: 1; */
+  transition: left 0.2s;
+}
+
+.main-nav .toggle-checkbox:checked ~ ul {
+  left: 0;
+/*   z-index: 2; */
+  background-color: #fefefe;
+}
+
+.main-nav .toggle-checkbox:checked ~ ul {
+  
+}
+
+.main-nav ul li {
+  padding: 10px;
+}
+
+.main-nav ul li:hover {
+  background-color: #dedede;
+}
+
+.nav-toggle {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  z-index: 1;
+}
+
+.nav-toggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+}
+
+.nav-toggle .burger
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #fefefe;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+.nav-toggle .burger:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+.nav-toggle .burger:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+.nav-toggle .toggle-checkbox:checked ~ .burger
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+.nav-toggle .toggle-checkbox:checked ~ .burger:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+.nav-toggle .toggle-checkbox:checked ~ .burger:nth-last-child(2)
+{
+  opacity: 1;
+  transform: rotate(-45deg) translate(0, -1px);
+}

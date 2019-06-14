@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+#{% block title %}Profile{% endblock %}
+
+{% block content %}
+
+    <div id="content-container" class="container p-none">
+        <div class="lgn-container col-lg-8">
+            <form id="profile-form" method="POST" 
+                  action="{% url 'update_db' %}">{% csrf_token %}
+              
+
+                <table class="table">
+                    <tr>
+                        <td><label for="id_taskname">Task name</label></td>
+                        <td><input id="id_taskname" name="name" 
+                                   type="text" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="id_body">Body</label></td>
+                        <td><input id="id_body" name="body" 
+                                   type="text" class="form-control"></td>
+                    </tr>
+                </table>
+                <input type="submit" value="POST" 
+                       class="btn btn-primary pull-right" />
+              
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+

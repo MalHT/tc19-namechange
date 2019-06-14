@@ -20,5 +20,9 @@ from project.project import views
 
 urlpatterns = [
    path('admin/', admin.site.urls),
-   path('', views.index, name='index'),
+   path('', views.home, name='home'),
+   path('profile/', views.profile, name='profile'),
+   #path('', views.login, name='login'),
+   path('validate/', views.validate_login, name='validate_login'),
+   path('profile_validation/', views.update_db, name='update_db'),
 ]

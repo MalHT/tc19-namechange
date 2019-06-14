@@ -1,3 +1,4 @@
+from project import settings
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -6,12 +7,15 @@ class Profile(models.Model):
     location = models.CharField(max_length=30, blank=True)
 
 class Task(models.Model):
+    DONE = 3
+    IN_PROGRESS = 2
+    NOT_DONE = 1
     TASK_STATE = (
       (DONE, "Done"),
       (IN_PROGRESS, "In Progress"),
       (NOT_DONE, "Not Done"),
     )
-    userid = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    userid = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     body = models.CharField(max_length=200)
     parent = models.IntegerField(default=0)
@@ -42,4 +46,4 @@ class Review(models.Model):
     orgid = models.ForeignKey(Organisation, on_delete=models.CASCADE)
     rating = models.IntegerField(choices=RATING_CHOICES)
     body = models.CharField(max_length=2000)
-    userid = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    userid = models.ForeignKey(User, on_delete=models.CASCADE)
